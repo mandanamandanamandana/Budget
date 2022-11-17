@@ -8,6 +8,10 @@ const router = express.Router()
 //register routes with the router
 
 router.get("/", (req, res) => {
-    res.render("budget_index.ejs")
+    res.render("budget_index.ejs", {
+
+    })
 
 })
+
+module.exports = router

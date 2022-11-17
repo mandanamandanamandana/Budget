@@ -15,7 +15,7 @@ app.use("/budget", budgetRouter)
 
 app.get('/', (req, res) =>{
     //res.render looks for a ejs file and we can send data to ejs file
-    res.render('budget_index.ejs', { budget: budget })
+    res.render('budget_index.ejs', { budget: budget })  
 });
 
 app.get('/budgets', (request, response)=> {
