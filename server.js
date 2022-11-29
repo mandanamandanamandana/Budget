@@ -14,8 +14,14 @@ const PORT = process.env.PORT || 3001
 app.use("/budget", budgetRouter)
 
 app.get('/', (req, res) =>{
+
     //res.render looks for a ejs file and we can send data to ejs file
-    res.render('budget_index.ejs', { budget: budget })  
+    let bankAccount = 0;
+
+for (var i = 0; i < budget.length; i++)
+    var item = budget[i]
+    bankAccount += item.amount;
+    res.render('index.ejs', { budget: budget, bankAccount: bankAccount })  
 });
 
 app.get('/budgets', (request, response)=> {
@@ -23,6 +29,7 @@ app.get('/budgets', (request, response)=> {
 })
 
 app.get('/budgets/:index', (request, response)=> {
+    res.render('show.ejs', {budget: budget[res.params.index]})
     response.send('Whats up Doc')
 })
 app.get('/budgets/new', (request, response)=> {
