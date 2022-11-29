@@ -1,0 +1,52 @@
+<% if bankAccount < 0 %>
+ <body style="background-color: red;"
+<% } else if { %>
+  bankAccount > 1000,
+  <body style="background-color: blue"
+<% } else { %>
+   <body style="background: green;"
+<% } %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/normalize.css">
+<link rel="stylesheet" href="/skeleton.css">
+</head>
+<body>
+    <h1>Budgtr</h1>
+        <% for (let i =0; i < budget.length; i++) { %>
+
+        <% console.log(i) %>
+    
+      <h1><%= budget[i].name %> </h1>
+    
+    <% } %>
+    <div class="container">
+        <table>
+          <% for (let i =0; i < budget.length; i++) { %>
+            <tr>
+              <td><%= budget[i].date %></td>
+              <td><a><%= budget[i].name %></a></td>
+              <td><%= budget[i].from %></td>
+              <td><%= budget[i].amount %></td>
+              <td><%= budget[i].tags %></td>
+            </tr>
+            <% } %>
+        </table>
+</div>
+</body>
+</html>
+<!-- 
+<% for (let i =0; i < coffees.length; i++) { %>
+
+    <% console.log(i) %>
+
+  <h1><%= coffees[i].name %> </h1>
+
+<% } %> -->
